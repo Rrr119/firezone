@@ -28,6 +28,12 @@ use url::Url;
 
 mod account_slug;
 mod eventloop;
+// Dependency-free device-group rule priority / conflict-detection kernel.
+// Dispatch validation lives in the portal; this keeps the gateway-side
+// semantics and existing `Filter` wire projection under test. See
+// `artifacts/run-firewall-rules-acceptance.sh`.
+#[allow(dead_code)]
+mod firewall_rules;
 mod manage;
 mod otel;
 
